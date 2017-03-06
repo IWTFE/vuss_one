@@ -33,4 +33,6 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 #git pull origin data 拉去线上版本
 #git push -u 提交现在版本
 
+#git merge --no-ff api //将api的分支与dev的分支合并
+
 #floweryan1111-api-reapi
