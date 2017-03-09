@@ -2,13 +2,14 @@
 <div>
   <div class="layer_mid border-box">
     <section class="layer-content output">
+
       <h1>
-          <el-button type="danger" size="small" class="but-style" @click="submitAddUser = true">创建角色</el-button>
+          <el-button type="danger" size="small" class="but-style" @click="submitAddUser = true" >创建角色</el-button>
         </h1>
     </section>
     <section class="table-info">
-      <el-table :data="tableData" border style="width: 100%">
-        <el-table-column prop="iwoid" label="序号" width="80">
+      <el-table :data="getTableData" v-model="getTableData" border style="width: 100%" v-loading='listLoading'>
+        <el-table-column type="index" label="序号" width="80">
         </el-table-column>
         <el-table-column prop="roleId" label="角色代码">
         </el-table-column>
@@ -40,8 +41,8 @@
         </el-pagination>
       </div>
     </div>
-    <el-dialog title="" v-model="submitAddUser"  >
-      <v-adduser></v-adduser>
+    <el-dialog title="" v-model="submitAddUser" @close='handleDialogClose'>
+      <v-adduser v-on:update="update"></v-adduser>
     </el-dialog>
 
   </div>
@@ -49,39 +50,51 @@
 
 <script>
 // import axios from 'axios'
+import { mapGetters, mapActions,mapState } from 'vuex'
 import {
   requestPowerUserList
-
 } from '../../../api/api'
-import adduser from 'src/components/dialog/adduser.vue'
+import adduser from 'src/components/dialog/createuser.vue'
 export default {
   data() {
     return {
+      listLoading: false,
       submitAddUser: false,
-      tableData: [{
-        iwoid: '',
-        roleId: '',
-        roleName: '',
-        roleLevel: '',
-        description: '',
-        modifier: '',
-        modifyTime: '',
-        roleStatus: '',
-        remark: ''
-      }]
-    }
-  },
+      tableData: []
+}
+},
   created() {
-    this.addUserList()
+    this.addUserList_()
   },
-  methods: {
+  props: {
+  close_: Boolean
+},
+computed: {
+  ...mapState([
+    'paramsStore'
+  ]),
+  ...mapGetters([
+    'getlist',
+    'getTableData',
+    'getSuccess'
+  ])
+},
+methods: {
+  update(val){
+    // this.tableData = val
+  },
+    ...mapActions([
+      'addUserList'
+    ]),
     handleClick() {
       console.log('修改!')
     },
-    addUserList() {
-      var that = this
-      var verifyParams = {
-          "body": {
+    handleDialogClose(){
+       this.submitAddUser = false
+    },
+    addUserList_(){
+      this.params= {
+        "body": {
             "loginUserId": "admin",
             "page": {
               "currPage": 0,
@@ -100,14 +113,7 @@ export default {
             "signature": "null"
           }
       }
-      requestPowerUserList(verifyParams).then(function(response) {
-        // console.log('susu111')
-        console.log(response.body.dateList)
-        that.tableData = response.body.dateList
-        // console.log(that.tableData)
-      }).catch(function(error) {
-        console.log(error)
-      })
+      this.addUserList(this.params)
     }
   },
   components: {

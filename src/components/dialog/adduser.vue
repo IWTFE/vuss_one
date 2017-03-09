@@ -2,7 +2,7 @@
   <div>
     <div class="layer-content output">
       <h1>
-        <span class="span_h1">创建角色</span>
+        <span class="span_h1">查询结果</span>
       </h1>
     </div>
     <section class="popup-box">
@@ -30,7 +30,7 @@
           <el-input type="textarea" v-model="ruleForm.remark"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="danger" @click="submitForm('ruleForm')">添加</el-button>
+          <el-button type="danger" @click="submitForm('ruleForm')">立即创建</el-button>
           <el-button type="danger" @click="resetForm('ruleForm')">重置</el-button>
         </el-form-item>
       </el-form>
@@ -54,7 +54,7 @@
          level: [{
           value: '管理级别',
           label: '管理级别'
-        },
+        }, 
         {
           value: '应用级别',
           label: '应用级别'
@@ -62,11 +62,11 @@
         options: [{
           value: '正常',
           label: '正常'
-        },
+        }, 
         {
           value: '冻结',
           label: '冻结'
-        },
+        }, 
         {
           value: '注销',
           label: '注销'
@@ -108,7 +108,7 @@
     border-bottom: 1px solid #d43d42;
     text-align: left;
     line-height: 1.5;
-    margin-top:10px;
+    margin-top:10px; 
   }
    .span_h1{
     color: white;
@@ -125,3 +125,4 @@
     padding: 10px 40px 10px 25px
    }
 </style>
+

@@ -38,6 +38,28 @@ import channel from 'components/channel/channel'
 import adduser from 'components/power/user/adduser'
 // @haoboyu permissionquery  角色权限查询
 import permissionquery from 'components/power/user/permissionquery'
+// @haoboyu 测试
+import test from 'components/power/user/test'
+
+// @yanchaochao RoleManagement  角色管理
+import RoleManagement from 'components/power/user/RoleManagement'
+// @yanchaochao RoleRightsManagement  角色权限管理
+import RoleRightsManagement from 'components/power/user/RoleRightsManagement'
+// @yanchaochao RoleRightsSearch  角色权限查询
+import RoleRightsSearch from 'components/power/user/RoleRightsSearch'
+// @yanchaochao UserRightsManagement  用户权限管理
+import UserRightsManagement from 'components/power/user/UserRightsManagement'
+//@yanchaochao UserRightsSearch 用户权限查询
+import UserRightsSearch from 'components/power/user/UserRightsSearch'
+//@yanchaochao resetPassword 重置用户密码
+import resetPassword from 'components/power/user/resetPassword'
+//@yanchaochao newPassword 修改密码
+import newPassword from 'components/power/user/newPassword'
+//@yanchaochao adminlog 管理员操作日志
+import adminlog from 'components/power/log/adminlog'
+//@yanchaochao systemlog 系统处理日志
+import systemlog from 'components/power/log/systemlog'
+
 
 
 Vue.use(Router)
@@ -137,6 +159,57 @@ const routes = [
       path: '/power/user/permissionquery',
       name: 'permissionquery',
       component: permissionquery
+    },
+    {
+      path: '/power/user/RoleManagement',
+      name: 'RoleManagement',
+      component: RoleManagement
+    },
+    {
+      path: '/power/user/RoleRightsManagement',
+      name: 'RoleRightsManagement',
+      component: RoleRightsManagement
+    },
+    {
+      path: '/power/user/RoleRightsSearch',
+      name: 'RoleRightsSearch',
+      component: RoleRightsSearch
+    },
+    {
+      path: '/power/user/UserRightsManagement',
+      name: 'UserRightsManagement',
+      component: UserRightsManagement
+    },
+    {
+      path: '/power/user/UserRightsSearch',
+      name: 'UserRightsSearch',
+      component: UserRightsSearch
+    },
+    {
+      path: '/power/user/resetPassword',
+      name: 'resetPassword',
+      component: resetPassword
+    },
+    {
+      path: '/power/user/newPassword',
+      name: 'newPassword',
+      component: newPassword
+    },
+    {
+      path: '/power/log/adminlog',
+      name: 'adminlog',
+      component: adminlog
+    },
+    {
+      path: '/power/log/systemlog',
+      name: 'systemlog',
+      component: systemlog
+    },
+
+     {
+      path: '/power/user/test',
+      name: 'test',
+      component: test
     }
     ]
   }

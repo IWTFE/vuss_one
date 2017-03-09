@@ -96,8 +96,9 @@ export default {
         {
           did: 8,
           fid: 3,
-          path: '/nav2nav2',
-          name: '子导航二子导航'
+          realname: '/power/user/test',
+          path:'/power/user/test',
+          name:'r333'
         },
         {
           did: 9,
@@ -127,10 +128,10 @@ export default {
           name:'权限-1'
         },
         {
-          uid: 2,
-          did: 9,
-          realname: '/power/user/permissionquery',
-          path:'/power/user/permissionquery',
+          uid: 1,
+          did: 3,
+          realname: '/power/user/test',
+          path:'/power/user/test',
           name:'r222'
         },
         {
@@ -146,20 +147,6 @@ export default {
           realname: '/power/user/permissionquery',
           path:'/power/user/permissionquery',
           name:'r444'
-        },
-        {
-          uid: 5,
-          did: 7,
-          realname: '/power/user/permissionquery',
-          path:'/power/user/permissionquery',
-          name:'r555'
-        },
-        {
-          uid: 6,
-          did: 8,
-          realname: '/power/user/permissionquery',
-          path:'/power/user/permissionquery',
-          name:'r666'
         },
         {
           uid: 7,

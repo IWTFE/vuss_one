@@ -12,4 +12,5 @@ export const requestLoginOut = params => { return axios.post(`${base}/fundSystem
 // 角色管理
 export const requestPowerUserList = params => { return axios.post(`${base_}/fundSystemManage-agent/resources/role/list`,params).then(res => res.data)}
 // 创建/添加 角色
-export const requestPowerCreateUser = params => { return axios.post(`${base}/fundSystemManage-agent/resources/role/create`,params).then(res => res.data)}
+export const requestPowerCreateUser = (params,fn) => { return axios.post(`${base}/fundSystemManage-agent/resources/role/create`,params,fn).then(res => res.data)}
+// export const requestPowerCreateUser = (params,config) => { return axios.post(`${base}/fundSystemManage-agent/resources/role/create`,params,config).then(res => res.data)}
